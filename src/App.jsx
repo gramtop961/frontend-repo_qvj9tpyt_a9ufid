@@ -1,28 +1,34 @@
-import { useState } from 'react'
+import Hero from './components/Hero.jsx';
+import Capabilities from './components/Capabilities.jsx';
+import Approach from './components/Approach.jsx';
+import Impact from './components/Impact.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-slate-100 text-slate-900">
+      {/* Hero with Spline cover */}
+      <Hero />
+
+      {/* Main sections */}
+      <Capabilities />
+      <Approach />
+      <Impact />
+
+      {/* Footer */}
+      <footer className="mx-auto max-w-7xl px-6 pb-16">
+        <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm md:flex-row md:text-left">
+          <div>
+            <h3 className="text-lg font-semibold">Ready to modernize your internal systems?</h3>
+            <p className="text-slate-600">Let’s unify workflows, automate processes, and elevate decision‑making.</p>
+          </div>
+          <a href="#capabilities" className="inline-flex items-center justify-center rounded-lg bg-slate-900 px-5 py-3 text-white shadow-sm transition hover:shadow-md">
+            View Our Capabilities
+          </a>
         </div>
-      </div>
+        <p className="mt-8 text-center text-sm text-slate-500">© {new Date().getFullYear()} Enterprise Systems & AI Solutions</p>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
